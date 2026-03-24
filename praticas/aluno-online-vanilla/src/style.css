@@ -70,7 +70,6 @@ aside > img {
   margin-right: 0.5rem;
 }
 
-/*Sobre responsividade*/
 @media (width >= 768px) {
   main > button {
     margin: 0 3rem;
@@ -79,7 +78,7 @@ aside > img {
   aside {
     display: block;
   }
-  
+
   section {
     display: grid;
     grid-template-columns: 1fr 1fr;
