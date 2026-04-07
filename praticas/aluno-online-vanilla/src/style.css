@@ -10,6 +10,12 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.6;
+
+   --cor-primaria: #c62828;
+  --cor-fundo: #f2f2f2;
+  --cor-card: #fff;
+  --cor-borda: #ddd;
+  --cor-botao: #e0e0e0;
 }
 
 body {
@@ -98,20 +104,6 @@ aside > img {
 }
 
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-:root {
-  --cor-primaria: #c62828;
-  --cor-fundo: #f2f2f2;
-  --cor-card: #ffffff;
-  --cor-borda: #ddd;
-  --cor-botao: #e0e0e0;
-}
-
 .login-container {
   display: flex;
   justify-content: center;
@@ -162,6 +154,7 @@ aside > img {
   background-color: var(--cor-botao);
   cursor: pointer;
 }
+
 
 .login-container footer {
   position: absolute;
