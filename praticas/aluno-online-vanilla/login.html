@@ -1,22 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login</title>
-</head>
-<body class="login-container">
+  </head>
+  <body class="login-container">
     <main>
-        <img src="learn.svg" alt="Chapéu de estudante">
-        <h1>Aluno Online</h1>
-        <label for="Matrícula">Matrícula</label>
-        <input type="number" id="Matrícula" name="Matrícula"/>
-        <p id="MatrículaErro"></p>
-        <label for="Senha">Senha</label>
-        <input type="number" id="Senha" name="Senha"/>
-        <p id="SenhaErro"></p>
-        <button type="submit">Entrar</button>
+      <img src="learn.svg" alt="Chapéu de estudante" />
+      <h1>Aluno Online</h1>
+      <label for="Matricula">Matrícula</label>
+      <input type="number" id="Matricula" name="Matricula" />
+      <span id="MatriculaErro"></span>
+      <label for="Senha">Senha</label>
+      <input type="password" id="Senha" name="Senha" />
+      <span id="SenhaErro"></span>
+      <button type="submit">Entrar</button>
     </main>
     <footer>&copy; 2026. Todos os direitos reservados</footer>
-</body>
+    <script type="module" src="./src/main.js"></script>
+  </body>
 </html>
