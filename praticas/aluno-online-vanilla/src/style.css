@@ -70,10 +70,6 @@ aside > img {
   margin-right: 0.5rem;
 }
 
-.login-container{
-  
-}
-
 @media (width >= 768px) {
   main > button {
     margin: 0 3rem;
@@ -88,4 +84,102 @@ aside > img {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
   }
+
+  .login-container button {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--cor-botao);
+  cursor: pointer;
+  margin: 0 auto;
 }
+
+}
+
+/*DAQUI PARA BAIXO LOGIN*/
+
+/* ( já tem na prática 01)  */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*  VARIÁVEIS  */
+:root {
+  --cor-primaria: #c62828;
+  --cor-fundo: #f2f2f2;
+  --cor-card: #ffffff;
+  --cor-borda: #ddd;
+  --cor-botao: #e0e0e0;
+}
+
+/*  BODY  */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--cor-fundo);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/*  CARD (MAIN)  */
+.login-container main {
+  background-color: var(--cor-card);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid var(--cor-borda);
+  width: 100%;
+  max-width: 400px;
+}
+
+/*  IMAGEM */
+.login-container main img {
+  display: block;
+  margin: 0 auto 1rem;
+  width: 80px;
+}
+
+/* TÍTULO */
+.login-container main h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/*  LABEL */
+.login-container label {
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+/*  INPUT  */
+.login-container input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 5px;
+  border: 1px solid var(--cor-borda);
+  margin-bottom: 1rem;
+}
+
+/*  BOTÃO  */
+.login-container button {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--cor-botao);
+  cursor: pointer;
+}
+
+/*  FOOTER  */
+.login-container footer {
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+
