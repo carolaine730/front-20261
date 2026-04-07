@@ -97,16 +97,13 @@ aside > img {
 
 }
 
-/*DAQUI PARA BAIXO LOGIN*/
 
-/* ( já tem na prática 01)  */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/*  VARIÁVEIS  */
 :root {
   --cor-primaria: #c62828;
   --cor-fundo: #f2f2f2;
@@ -115,7 +112,6 @@ aside > img {
   --cor-botao: #e0e0e0;
 }
 
-/*  BODY  */
 .login-container {
   display: flex;
   justify-content: center;
@@ -125,7 +121,6 @@ aside > img {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/*  CARD (MAIN)  */
 .login-container main {
   background-color: var(--cor-card);
   padding: 2rem;
@@ -135,26 +130,22 @@ aside > img {
   max-width: 400px;
 }
 
-/*  IMAGEM */
 .login-container main img {
   display: block;
   margin: 0 auto 1rem;
   width: 80px;
 }
 
-/* TÍTULO */
 .login-container main h1 {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-/*  LABEL */
 .login-container label {
   display: block;
   margin-bottom: 0.3rem;
 }
 
-/*  INPUT  */
 .login-container input {
   width: 100%;
   padding: 0.6rem;
@@ -163,7 +154,6 @@ aside > img {
   margin-bottom: 1rem;
 }
 
-/*  BOTÃO  */
 .login-container button {
   width: 100%;
   padding: 0.7rem;
@@ -173,7 +163,6 @@ aside > img {
   cursor: pointer;
 }
 
-/*  FOOTER  */
 .login-container footer {
   position: absolute;
   bottom: 10px;
