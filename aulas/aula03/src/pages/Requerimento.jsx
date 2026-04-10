@@ -1,16 +1,18 @@
-import Sidebar from "../components/Sidebar";
-import Topbar from "../components/Topbar";
+
+import Tabela from "../components/Tabela";
+import Layout from "./Layout";
 
 function Requerimento() {
   return (
-    <>
-      <Sidebar />
-      <main>
-        <Topbar />
-        <h2>Meus Requerimento</h2>
-        <section></section>
-      </main>
-    </>
+    <Layout
+      titulo="Meus Requerimentos"
+      subtitulo="Faça a Solicitação O
+    nline Para a Secretaria"
+    >
+      <Tabela />
+      <Tabela />
+      <Tabela />
+    </Layout>
   );
 }
 
