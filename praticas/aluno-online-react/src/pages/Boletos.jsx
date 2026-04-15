@@ -1,14 +1,18 @@
 import Sidebar from "../components/Sidebar";
+import Tabela from "../components/Tabela";
 import Topbar from "../components/Topbar";
 
 function Boletos() {
-  return (
+   return (
     <>
       <Sidebar />
       <main>
         <Topbar />
-        <h2>Minhas Boletos</h2>
-        <section></section>
+        <h2>Meus Boletos</h2>
+        <section>
+          <Tabela />
+          <Tabela />
+        </section>
       </main>
     </>
   );

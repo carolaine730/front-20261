@@ -1,8 +1,8 @@
 function Card(){
     return <article>
-        <h3>Mural de Avisos</h3>
+        <h3>Card Único - Titulo</h3>
         <ul>
-            <li>Eleição para Representante</li>
+            <li>Avisos - corpo do card</li>
             <li></li>
             <li></li>
         </ul>

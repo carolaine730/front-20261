@@ -5,7 +5,7 @@ import Notas from "./pages/Notas";
 import Requerimento from "./pages/Requerimento";
 
 function App() {
-  const pagina = 2;
+  const pagina = 4;
 
   return (
     <>

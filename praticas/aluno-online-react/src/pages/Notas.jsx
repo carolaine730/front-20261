@@ -1,4 +1,5 @@
 import Sidebar from "../components/Sidebar";
+import Tabela from "../components/Tabela";
 import Topbar from "../components/Topbar";
 
 function Notas() {
@@ -8,7 +9,10 @@ function Notas() {
       <main>
         <Topbar />
         <h2>Minhas Notas</h2>
-        <section></section>
+        <section>
+          <Tabela />
+          <Tabela />
+        </section>
       </main>
     </>
   );
