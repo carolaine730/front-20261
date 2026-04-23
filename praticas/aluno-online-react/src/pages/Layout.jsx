@@ -1,11 +1,11 @@
-import Menu from "../components/Menu";
-import Topbar from "../components/Topbar";
+import Menu from "../components/Menu/Menu";
+import Topbar from "../components/Topbar/Topbar";
 
 
-function Layout({ children }) {
+function Layout({ children, setPagina }) {
   return (
     <>
-     <Menu />
+     <Menu setPagina={setPagina} />
       <main className="app-main">
         {children}
       </main>
