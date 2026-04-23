@@ -3,18 +3,24 @@ import Dashboard from "./pages/Dashboard";
 import Faltas from "./pages/Faltas";
 import Notas from "./pages/Notas";
 import Requerimento from "./pages/Requerimento";
+import Logo from "./assets/learn.svg"
+import Avatar from "./assets/avatar.svg"
+import { useState } from "react";
+import Menu from "./components/Menu";
+import './App.css';
+import Layout from "./pages/Layout";
+let pagina = 0;
 
 function App() {
-  const pagina = 4;
-
+  const pagina = <Notas />
   return (
-    <>
-      {pagina == 1 && <Dashboard />}
-      {pagina == 2 && <Notas />}
-      {pagina == 3 && <Faltas />}
-      {pagina == 4 && <Boletos />}
-      {pagina == 5 && <Requerimento />}
-    </>
+    <div className="app-container">
+      <Layout>
+        <main className="app-main">
+          {pagina}
+        </main>
+      </Layout>
+    </div>
   );
 }
 

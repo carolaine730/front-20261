@@ -1,25 +1,22 @@
 .topbar {
-  display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
+  padding: 1rem 0px;
 }
 
-.user-greeting span {
-  font-size: 1.1rem;
-  font-weight: 500;
-  display: block;
+.title-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.welcome-message {
-  font-size: 0.9rem;
+.subtitle-container {
+  font-size: 24px;
   color: #666;
-  margin: 0;
 }
 
-.user-avatar img {
+.user-avatar {
   width: 40px;
   height: 40px;
   border-radius: 50%;

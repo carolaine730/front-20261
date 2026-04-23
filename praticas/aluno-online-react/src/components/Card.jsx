@@ -1,12 +1,19 @@
-function Card(){
-    return <article>
-        <h3>Card Único - Titulo</h3>
-        <ul>
-            <li>Avisos - corpo do card</li>
-            <li></li>
-            <li></li>
-        </ul>
-    </article>
+import "./Card.css"
+
+function Card({ titulo, avisos = [''] }) {
+    return (
+        <article className="card">
+            <div className="card-header">
+                <h3>{titulo}</h3>
+            </div>
+            <div className="card-content">
+                <ul>
+                    {avisos.map((item, index) => (
+                        <li key={index + item}>{item}</li>
+                    ))}
+                </ul>
+            </div>
+        </article>)
 }
 
 export default Card;

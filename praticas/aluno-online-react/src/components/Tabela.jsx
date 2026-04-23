@@ -1,35 +1,28 @@
-function Tabela() {
+import './Tabela.css';
+function Tabela({tableData, title}) {
   return (
     <article>
-      <h3>Minhas Faltas - Titulo</h3>
       <table>
         <thead>
+          {title && (
+            <tr>
+              <th colSpan={tableData.header.length}>{title}</th>
+            </tr>
+          )}
           <tr>
-            <th>2026</th>
-          </tr>
-
-          <tr>
-            <th>Diciplina</th>
-            <th>Total Faltas</th>
-            <th> % de Presença</th>
+            {tableData.header.map((col) => (
+              <th key={col}>{col}</th>
+            ))}
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>BI e Data Werehousing </td>
-            <td>0</td>
-            <td>100</td>
-          </tr>
-          <tr>
-            <td>Construção de FrontEnd </td>
-            <td>0</td>
-            <td>100</td>
-          </tr>
-          <tr>
-            <td>Manuntenção de Software </td>
-            <td>0</td>
-            <td>100</td>
-          </tr>
+          {tableData.data.map((row, index) => (
+            <tr key={index}>
+              {row.map((cell, cellIndex) => (
+                <td key={cellIndex}>{cell}</td>
+              ))}
+            </tr>
+          ))}
         </tbody>
       </table>
     </article>

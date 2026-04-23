@@ -1,13 +1,13 @@
-import Sidebar from "../components/Sidebar";
+import Menu from "../components/Menu";
 import Topbar from "../components/Topbar";
 
 
-function Layout() {
+function Layout({ children }) {
   return (
     <>
-      <Sidebar />
-      <main>
-        <Topbar />
+     <Menu />
+      <main className="app-main">
+        {children}
       </main>
     </>
   );
