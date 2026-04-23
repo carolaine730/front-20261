@@ -6,7 +6,7 @@ import Requerimento from '../pages/Requerimento';
 import Logo from '../assets/learn.svg';
 import './Menu.css';
 
-function Menu({setPagina}) {
+function Menu() {
   return (
     <nav className="menu">
       <header>
