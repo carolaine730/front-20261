@@ -1,12 +1,11 @@
-import { useContext } from "react";
 import "./Menu.css";
 import { Link, NavLink } from "react-router";
-import { AuthContext } from "../contexts/AuthContext";
+import { useAuthContext } from "../contexts/AuthContext";
 
 function Menu() {
   const usuarioId = 0; //exemplo como se a rota tivesse pegado da api esse id
 
-  const { logout, usuario } = useContext (AuthContext);
+  const { logout, usuario } = useAuthContext ();
 
   const handleSair = () => {
     logout();
