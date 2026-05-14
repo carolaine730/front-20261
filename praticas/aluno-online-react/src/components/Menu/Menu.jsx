@@ -6,7 +6,11 @@ import Requerimento from '../../pages/Requerimento/Requerimento';
 import Logo from '../../assets/learn.svg';
 import './Menu.css';
 
-function Menu({setPagina}) {
+function Menu({setPagina, onLogout}) {
+  const handleLogout = () => {
+    onLogout();
+  };
+
   return (
     <nav className="menu">
       <header>
@@ -19,7 +23,7 @@ function Menu({setPagina}) {
         <li onClick={() => setPagina(<Faltas />)}>Faltas</li>
         <li onClick={() => setPagina(<Boletos />)}>Boletos</li>
         <li onClick={() => setPagina(<Requerimento />)}>Requerimento</li>
-        <li onClick={() => setPagina(<Dashboard />)}>Sair</li>
+        <li onClick={handleLogout}>Sair</li>
       </ul>
     </nav>
   );
