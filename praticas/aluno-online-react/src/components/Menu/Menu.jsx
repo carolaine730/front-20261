@@ -1,16 +1,8 @@
-import Boletos from '../../pages/Boletos/Boletos';
-import Dashboard from '../../pages/Dashboard/Dashboard';
-import Faltas from '../../pages/Faltas/Faltas';
-import Notas from '../../pages/Notas/Notas';
-import Requerimento from '../../pages/Requerimento/Requerimento';
-import Logo from '../../assets/learn.svg';
-import './Menu.css';
+import { NavLink } from "react-router";
+import Logo from "../../assets/learn.svg";
+import "./Menu.css";
 
-function Menu({setPagina, onLogout}) {
-  const handleLogout = () => {
-    onLogout();
-  };
-
+function Menu() {
   return (
     <nav className="menu">
       <header>
@@ -18,12 +10,24 @@ function Menu({setPagina, onLogout}) {
         <h1>Aluno Online</h1>
       </header>
       <ul>
-        <li onClick={() => setPagina(<Dashboard />)}>Dashboard</li>
-        <li onClick={() => setPagina(<Notas />)}>Notas</li>
-        <li onClick={() => setPagina(<Faltas />)}>Faltas</li>
-        <li onClick={() => setPagina(<Boletos />)}>Boletos</li>
-        <li onClick={() => setPagina(<Requerimento />)}>Requerimento</li>
-        <li onClick={handleLogout}>Sair</li>
+        <li>
+          <NavLink to="/">Dashboard</NavLink>
+        </li>
+        <li>
+          <NavLink to="/notas">Notas</NavLink>
+        </li>
+        <li>
+          <NavLink to="/faltas">Faltas</NavLink>
+        </li>
+        <li>
+          <NavLink to="/boletos">Boletos</NavLink>
+        </li>
+        <li>
+          <NavLink to="/requerimentos">Requerimentos</NavLink>
+        </li>
+        <li>
+          <NavLink to="/login">Sair</NavLink>
+        </li>
       </ul>
     </nav>
   );

@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
 import './Login.css';
 import Logo from '../../assets/learn.svg';
 
-function Login({ onLogin }) {
+function Login() {
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [errors, setErrors] = useState({ email: '', senha: '' });
@@ -63,7 +65,7 @@ function Login({ onLogin }) {
 
     // Se válido, fazer login
     if (isValid) {
-      onLogin({ email, senha });
+      navigate("/")
       setEmail('');
       setSenha('');
     }

@@ -1,13 +1,12 @@
+import { Outlet } from "react-router";
 import Menu from "../components/Menu/Menu";
-import Topbar from "../components/Topbar/Topbar";
 
-
-function Layout({ children, setPagina, onLogout }) {
+function Layout() {
   return (
     <>
-     <Menu setPagina={setPagina} onLogout={onLogout} />
+      <Menu />
       <main className="app-main">
-        {children}
+        <Outlet />
       </main>
     </>
   );
