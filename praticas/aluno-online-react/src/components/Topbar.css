@@ -1,0 +1,30 @@
+.topbar {
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0px;
+}
+
+.title-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subtitle-container {
+  font-size: 24px;
+  color: #666;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+@media (max-width: 767px) {
+  .user-greeting span {
+    margin-bottom: 0.25rem;
+  }
+}
