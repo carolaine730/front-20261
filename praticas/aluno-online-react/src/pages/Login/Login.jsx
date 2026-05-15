@@ -1,63 +1,74 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router';
-import './Login.css';
-import Logo from '../../assets/learn.svg';
+import { useState } from "react";
+import { useNavigate } from "react-router";
+import "./Login.css";
+import Logo from "../../assets/learn.svg";
+import { useAuthContext } from '../../contexts/AuthContext';
 
 function Login() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [senha, setSenha] = useState('');
-  const [errors, setErrors] = useState({ email: '', senha: '' });
+  const { login } = useAuthContext();
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [errors, setErrors] = useState({ email: "", senha: "" });
 
   const handleChangeEmail = (e) => {
     const value = e.target.value;
     setEmail(value);
-    
+
     // Validar email em tempo real
-    if (value.trim() === '') {
-      setErrors(prev => ({ ...prev, email: 'O campo de email é obrigatório.' }));
-    } else if (!value.includes('@')) {
-      setErrors(prev => ({ ...prev, email: 'Email inválido.' }));
+    if (value.trim() === "") {
+      setErrors((prev) => ({
+        ...prev,
+        email: "O campo de email é obrigatório.",
+      }));
+    } else if (!value.includes("@")) {
+      setErrors((prev) => ({ ...prev, email: "Email inválido." }));
     } else {
-      setErrors(prev => ({ ...prev, email: '' }));
+      setErrors((prev) => ({ ...prev, email: "" }));
     }
   };
 
   const handleChangeSenha = (e) => {
     const value = e.target.value;
     setSenha(value);
-    
+
     // Validar senha em tempo real
-    if (value.trim() === '') {
-      setErrors(prev => ({ ...prev, senha: 'O campo de senha é obrigatório.' }));
+    if (value.trim() === "") {
+      setErrors((prev) => ({
+        ...prev,
+        senha: "O campo de senha é obrigatório.",
+      }));
     } else if (value.length < 3) {
-      setErrors(prev => ({ ...prev, senha: 'A senha deve ter no mínimo 3 caracteres.' }));
+      setErrors((prev) => ({
+        ...prev,
+        senha: "A senha deve ter no mínimo 3 caracteres.",
+      }));
     } else {
-      setErrors(prev => ({ ...prev, senha: '' }));
+      setErrors((prev) => ({ ...prev, senha: "" }));
     }
   };
 
   const handleSubmit = (e) => {
     // Impedir comportamento padrão do formulário
     e.preventDefault();
-    
-    let newErrors = { email: '', senha: '' };
+
+    let newErrors = { email: "", senha: "" };
     let isValid = true;
 
     // Validação final
-    if (email.trim() === '') {
-      newErrors.email = 'O campo de email é obrigatório.';
+    if (email.trim() === "") {
+      newErrors.email = "O campo de email é obrigatório.";
       isValid = false;
-    } else if (!email.includes('@')) {
-      newErrors.email = 'Email inválido.';
+    } else if (!email.includes("@")) {
+      newErrors.email = "Email inválido.";
       isValid = false;
     }
 
-    if (senha.trim() === '') {
-      newErrors.senha = 'O campo de senha é obrigatório.';
+    if (senha.trim() === "") {
+      newErrors.senha = "O campo de senha é obrigatório.";
       isValid = false;
     } else if (senha.length < 3) {
-      newErrors.senha = 'A senha deve ter no mínimo 3 caracteres.';
+      newErrors.senha = "A senha deve ter no mínimo 3 caracteres.";
       isValid = false;
     }
 
@@ -65,9 +76,12 @@ function Login() {
 
     // Se válido, fazer login
     if (isValid) {
-      navigate("/")
-      setEmail('');
-      setSenha('');
+      login({
+        email,
+      });
+      navigate("/");
+      setEmail("");
+      setSenha("");
     }
   };
 
@@ -88,7 +102,7 @@ function Login() {
               value={email}
               onChange={handleChangeEmail}
               placeholder="Digite seu email"
-              className={errors.email ? 'input-error' : ''}
+              className={errors.email ? "input-error" : ""}
             />
             {errors.email && <p className="error-message">{errors.email}</p>}
           </div>
@@ -101,7 +115,7 @@ function Login() {
               value={senha}
               onChange={handleChangeSenha}
               placeholder="Digite sua senha"
-              className={errors.senha ? 'input-error' : ''}
+              className={errors.senha ? "input-error" : ""}
             />
             {errors.senha && <p className="error-message">{errors.senha}</p>}
           </div>

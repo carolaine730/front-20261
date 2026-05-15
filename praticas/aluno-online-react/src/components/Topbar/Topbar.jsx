@@ -1,5 +1,6 @@
 import './Topbar.css'
-import Avatar from "../../assets/avatar.svg"
+import Avatar from "../../assets/avatar.svg";
+
 
 function Topbar({titulo, subtitulo}) {
   return (

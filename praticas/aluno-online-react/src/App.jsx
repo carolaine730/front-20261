@@ -3,15 +3,27 @@ import Dashboard from "./pages/Dashboard/Dashboard";
 import Faltas from "./pages/Faltas/Faltas";
 import Notas from "./pages/Notas/Notas";
 import Requerimento from "./pages/Requerimento/Requerimento";
-import Logo from "./assets/learn.svg";
-import Avatar from "./assets/avatar.svg";
-import Menu from "./components/Menu/Menu";
-import Layout from "./pages/Layout";
 import Login from "./pages/Login/Login";
+import Layout from "./pages/Layout";
+
 import "./App.css";
-import { Route, Routes } from "react-router";
+
+import { Route, Routes, Navigate } from "react-router";
+import { useAuthContext } from "./contexts/AuthContext";
 
 function App() {
+  const { logado } = useAuthContext();
+
+  // usuário NÃO logado
+  if (!logado) {
+    return (
+      <Routes>
+        <Route path="*" element={<Login />} />
+      </Routes>
+    );
+  }
+
+  // usuário logado
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
@@ -22,7 +34,8 @@ function App() {
         <Route path="requerimentos" element={<Requerimento />} />
       </Route>
 
-      <Route path="/login" element={<Login />} />
+      {/* qualquer rota inválida volta pro dashboard */}
+      <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );
 }
