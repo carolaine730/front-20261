@@ -1,7 +1,7 @@
 import { NavLink } from "react-router";
 import Logo from "../../assets/learn.svg";
 import "./Menu.css";
-import { useAuthContext } from "../../contexts/AuthContext";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 function Menu() {
   const { logout } = useAuthContext();

@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useState } from "react";
 
 //cria o contexto
 const AuthContext = createContext();
@@ -8,7 +8,7 @@ function AuthProvider({ children }) {
   const [logado, setLogado] = useState(false);
   const [usuario, setUsusario] = useState({});
 
-  const login = (dados) => {
+  const login = () => {
     //chamar a API passando dados
     setUsusario({
       id: 0,
@@ -32,7 +32,4 @@ function AuthProvider({ children }) {
   );
 }
 
-function useAuthContext (){
-    return useContext(AuthContext);
-}
-export { useAuthContext, AuthProvider };
+export { AuthContext, AuthProvider };
