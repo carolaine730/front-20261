@@ -9,7 +9,8 @@ import Layout from "./pages/Layout";
 import "./App.css";
 
 import { Route, Routes, Navigate } from "react-router";
-import { useAuthContext } from "./contexts/AuthContext";
+import { useAuthContext } from "./hooks/useAuthContext";
+import NovoRequerimento from "./pages/Requerimento/NovoRequerimento";
 
 function App() {
   const { logado } = useAuthContext();
@@ -32,6 +33,7 @@ function App() {
         <Route path="notas" element={<Notas />} />
         <Route path="boletos" element={<Boletos />} />
         <Route path="requerimentos" element={<Requerimento />} />
+        <Route path="requerimentos/novo" element={<NovoRequerimento/>} />
       </Route>
 
       {/* qualquer rota inválida volta pro dashboard */}
