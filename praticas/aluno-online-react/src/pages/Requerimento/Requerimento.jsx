@@ -1,5 +1,6 @@
 import Tabela from "../../components/Tabela/Tabela";
 import Topbar from "../../components/Topbar/Topbar";
+import {Link} from "react-router"
 
 function Requerimento() {
   
@@ -19,6 +20,7 @@ function Requerimento() {
     <div>
       <Topbar titulo="Meus Requerimentos" subtitulo="Faça solicitações online para a secretaria" />
       <section>
+        <Link to="/requerimentos/novo">Novo Requerimento</Link>
         <Tabela tableData={requerimentos} title={requerimentos.titulo} />
       </section>
     </div>
