@@ -1,6 +1,6 @@
 import Card from "../../components/Card/Card";
 import Topbar from "../../components/Topbar/Topbar";
-import { useAuthContext } from "../../contexts/AuthContext";
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 function Dashboard() {
   const {usuario} = useAuthContext();
