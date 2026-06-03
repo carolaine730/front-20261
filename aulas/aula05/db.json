@@ -5,6 +5,18 @@
       "preco": 12.5,
       "unidade": "kg",
       "id": "pPUI1rXfLfU"
+    },
+    {
+      "nome": "Banna",
+      "preco": "24.99",
+      "unidade": "1",
+      "id": "0Nuu1FUJO3o"
+    },
+    {
+      "nome": "limao",
+      "preco": "5.99",
+      "unidade": "3",
+      "id": "cbgII1r41uI"
     }
   ],
   "clientes": [],
