@@ -1,9 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
-import { listar } from "../services/produtoService";
+import { listar, remover } from "../services/produtoService";
 
 function Listagem() {
   const [dados, setDados] = useState([]);
+
+  const trataRemover = async(produto) => {
+    await remover(produto);
+    setDados(dados.filter(item => item.id != produto.id));
+  }
 
   useEffect(() => {
     //dispatch
@@ -34,10 +39,10 @@ function Listagem() {
                     <td>{item.preco}</td>
                     <td>{item.unidade}</td>
                     <td>
-                        <Link to={`/produtos/editar/${item.id}}`}>Editar</Link>
+                        <Link to={`/produtos/editar/${item.id}`}>Editar</Link>
                     </td>
                     <td>
-                        <Link to="/produtos">Remover</Link>
+                        <Link to="/produtos" onClick={() => trataRemover(item)}>Remover</Link>
                     </td>
                 </tr>
             ))}

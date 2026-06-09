@@ -1,10 +1,10 @@
 {
   "produtos": [
     {
+      "id": "pPUI1rXfLfU",
       "nome": "banana",
-      "preco": 12.5,
-      "unidade": "kg",
-      "id": "pPUI1rXfLfU"
+      "preco": "1000",
+      "unidade": "gg"
     },
     {
       "nome": "Banna",
@@ -13,10 +13,10 @@
       "id": "0Nuu1FUJO3o"
     },
     {
-      "nome": "limao",
-      "preco": "5.99",
-      "unidade": "3",
-      "id": "cbgII1r41uI"
+      "nome": "mamão",
+      "preco": "2,29",
+      "unidade": "1un",
+      "id": "5avQC3QVE8w"
     }
   ],
   "clientes": [],

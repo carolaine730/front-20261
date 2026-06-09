@@ -1,42 +1,44 @@
-import { Link, useNavigate } from "react-router";
+import { useEffect } from "react";
+import { Link, useNavigate, useParams } from "react-router";
 import { useForm } from "react-hook-form";
-import { criar } from "../services/produtoService";
+import { criar, modificar, obter } from "../services/produtoService";
 
-function Formulario(){
+function Formulario() {
+  const { id } = useParams();
+  const { register, handleSubmit, reset } = useForm();
+  const navigate = useNavigate();
 
-    const {register, handleSubmit } = useForm();
-    const navigate = useNavigate();
-
-    const salvar = async (dados) =>{
-        await criar(dados);
-        navigate("/produtos");
+  const salvar = async (dados) => {
+    if (id) {
+      await modificar({ id, ...dados });
+    } else {
+      await criar(dados);
     }
+    navigate("/produtos");
+  };
 
-    return(<>
-    <h1>Cadastro de Produtos</h1>
-    <form onSubmit={handleSubmit(salvar)}>
-        <input 
-            type="text" 
-            placeholder="nome" 
-            {...register("nome")}
-        />
+  useEffect(() => { 
+    const disparar = async() => {
+        const produto = await obter({id});
+        reset(produto);
+    }
+    if (id) disparar(); //dispara só quando modificar 
+  }, [])
 
-        <input 
-            type="text" 
-            placeholder="Preço 0.00"
-            {...register("preco")}
-        />
+  return (
+    <>
+      <h1>Cadastro de Produtos</h1>
+      <form onSubmit={handleSubmit(salvar)}>
+        <input type="text" placeholder="nome" {...register("nome")} />
 
-        <input 
-            type="text" 
-            placeholder="Unidade"
-            {...register("unidade")}
-        />
+        <input type="text" placeholder="Preço 0.00" {...register("preco")} />
+
+        <input type="text" placeholder="Unidade" {...register("unidade")} />
         <Link to="/produtos">Desistir</Link>
         <button type="submit">Salvar</button>
-    </form>
+      </form>
     </>
-    );
+  );
 }
 
 export default Formulario;
