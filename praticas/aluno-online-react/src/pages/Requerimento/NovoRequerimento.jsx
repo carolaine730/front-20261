@@ -3,6 +3,7 @@ import Tabela from "../../components/Tabela/Tabela";
 import Topbar from "../../components/Topbar/Topbar";
 import "./NovoRequerimento.css";
 
+
 function NovoRequerimento() {
   const {
     register,
