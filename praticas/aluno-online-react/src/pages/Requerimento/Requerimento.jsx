@@ -11,7 +11,7 @@ function Requerimento() {
     //dispatch
     const disparar = async () => {
       const resposta = await listar();
-      setDados({ header: ['Tipo de Requerimento', 'Data de Solicitação', 'Situação'], data: resposta});
+      setDados({ header: ['Tipo de Requerimento', 'Data de Solicitação', 'Situação', 'descricao', 'id'], data: resposta});
     };
     disparar();
 
