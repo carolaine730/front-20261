@@ -2,6 +2,8 @@ import { useForm } from "react-hook-form";
 import Tabela from "../../components/Tabela/Tabela";
 import Topbar from "../../components/Topbar/Topbar";
 import "./NovoRequerimento.css";
+import { criar } from "../../services/requerimentoService";
+import { useNavigate } from "react-router";
 
 function NovoRequerimento() {
   const {
@@ -11,15 +13,15 @@ function NovoRequerimento() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
+  const navigate = useNavigate();
 
-    alert("Requerimento enviado com sucesso!");
-
+  const onSubmit = async (data) => {
+    await criar({...data, data: new Date(), situacao: "Em Analise"});
     reset();
+    navigate("/requerimentos");
   };
 
-const hoje = new Date().toLocaleDateString("en-CA");
+  const hoje = new Date().toLocaleDateString("en-CA");
 
   return (
     <div>

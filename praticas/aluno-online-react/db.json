@@ -1,0 +1,19 @@
+{
+  "requerimentos": [
+    {
+      "tipo": "Dispensa de Disciplina",
+      "descricao": "dded",
+      "data": "2026-06-11T22:48:32.118Z",
+      "situacao": "Em Analise",
+      "id": "sLlo8Dp-CpA"
+    },
+    {
+      "tipo": "Revisão de Menção",
+      "descricao": "dede",
+      "data": "2026-06-11T22:55:58.543Z",
+      "situacao": "Em Analise",
+      "id": "5vcKmwdku8Y"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

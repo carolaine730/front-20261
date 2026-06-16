@@ -18,7 +18,7 @@ function Tabela({tableData, title}) {
         <tbody>
           {tableData.data.map((row, index) => (
             <tr key={index}>
-              {row.map((cell, cellIndex) => (
+              {Object.values(row).map((cell, cellIndex) => (
                 <td key={cellIndex}>{cell}</td>
               ))}
             </tr>

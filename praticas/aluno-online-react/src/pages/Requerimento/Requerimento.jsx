@@ -1,27 +1,29 @@
+import { useEffect, useState } from "react";
 import Tabela from "../../components/Tabela/Tabela";
 import Topbar from "../../components/Topbar/Topbar";
 import {Link} from "react-router"
+import { listar } from "../../services/requerimentoService";
 
 function Requerimento() {
   
-  const requerimentos = {
-    titulo: "Requerimentos",
-    header: ['Tipo de Requerimento', 'Data de Solicitação', 'Situação'],
-    data: [
-      ['Revisão de Menção', '15/12/2025', 'Indeferido'],
-      ['Dispensa de Disciplina', '12/06/2025', 'Indeferido'],
-      ['Trancamento de Matrícula', '05/01/2024', 'Deferido'],
-      ['Mudança de Turno', '10/10/2023', 'Deferido'],
-      ['Renovação de Matrícula', '20/02/2023', 'Deferido'],
-    ]
-  }
+  const [requerimentos, setDados] = useState({ header: ['Tipo de Requerimento', 'Data de Solicitação', 'Situação'], data:[]})
+   useEffect(() => {
+    //dispatch
+    const disparar = async () => {
+      const resposta = await listar();
+      setDados({ header: ['Tipo de Requerimento', 'Data de Solicitação', 'Situação', 'descricao', 'id'], data: resposta});
+    };
+    disparar();
+
+  }, []);
+
 
   return (
     <div>
       <Topbar titulo="Meus Requerimentos" subtitulo="Faça solicitações online para a secretaria" />
       <section>
         <Link to="/requerimentos/novo">Novo Requerimento</Link>
-        <Tabela tableData={requerimentos} title={requerimentos.titulo} />
+        <Tabela tableData={requerimentos} title={"Requerimentos"} />
       </section>
     </div>
   );
