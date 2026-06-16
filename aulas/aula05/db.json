@@ -17,12 +17,18 @@
       "preco": "2,29",
       "unidade": "1un",
       "id": "5avQC3QVE8w"
+    },
+    {
+      "id": "LKe5XpCMAwM",
+      "nome": "<script>alert(\"perdeu\")</script>",
+      "preco": "1",
+      "unidade": "un"
     }
   ],
   "clientes": [],
   "fornecedores": [],
   "pedidos": [],
-  "usuarios":[
+  "usuarios": [
     {
       "email": "carolaine@email.br",
       "senha": "123456",
