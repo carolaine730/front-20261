@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import "./Login.css";
 import Logo from "../../assets/learn.svg";
-import { useAuthContext } from '../../hooks/useAuthContext';
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 function Login() {
   const navigate = useNavigate();
@@ -48,7 +48,7 @@ function Login() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     // Impedir comportamento padrão do formulário
     e.preventDefault();
 
@@ -76,12 +76,15 @@ function Login() {
 
     // Se válido, fazer login
     if (isValid) {
-      login({
-        email,
-      });
-      navigate("/");
-      setEmail("");
-      setSenha("");
+      try {
+        await login(email, senha);
+
+        navigate("/");
+        setEmail("");
+        setSenha("");
+      } catch (error) {
+        alert(error.message);
+      }
     }
   };
 
