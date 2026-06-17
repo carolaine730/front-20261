@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 import { login as loginService } from "../services/authService";
 
 // cria o contexto
@@ -6,18 +6,11 @@ const AuthContext = createContext();
 
 // cria o provedor
 function AuthProvider({ children }) {
-  const [logado, setLogado] = useState(false);
-  const [usuario, setUsusario] = useState({});
+  const token = localStorage.getItem("token");
+  const usuarioSalvo = localStorage.getItem("usuario");
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
-    const usuarioSalvo = localStorage.getItem("usuario");
-
-    if (token && usuarioSalvo) {
-      setLogado(true);
-      setUsusario(JSON.parse(usuarioSalvo));
-    }
-  }, []);
+  const [logado, setLogado] = useState(!!token);
+  const [usuario, setUsusario] = useState(usuarioSalvo);
 
   const login = async (email, senha) => {
     const resposta = await loginService(email, senha);
